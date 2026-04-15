@@ -1,4 +1,6 @@
 import { StackingFeatures } from "./components/stacking-features";
+import { InteractiveAdminTour } from "./components/admin-tour/interactive-admin-tour";
+import { PricingSection } from "./components/pricing-section";
 
 export default function Home() {
   const clientBaseUrl =
@@ -16,20 +18,20 @@ export default function Home() {
           <div>
             <p className="text-lg font-semibold">SalonTakvim</p>
             <p className="text-xs text-(--muted-foreground)">
-              Randevu ve işletme yönetimi
+              Appointment and business management
             </p>
           </div>
         </div>
 
         <nav className="hidden items-center gap-6 text-sm text-(--muted-foreground) md:flex">
           <a className="transition hover:text-(--foreground)" href="#features">
-            Özellikler
+            Features
           </a>
           <a className="transition hover:text-(--foreground)" href="#workflow">
-            Nasıl çalışır
+            How it works
           </a>
           <a className="transition hover:text-(--foreground)" href="#pricing">
-            Paketler
+            Pricing
           </a>
           <a className="transition hover:text-(--foreground)" href="#cta">
             Demo
@@ -41,13 +43,13 @@ export default function Home() {
             className="hidden rounded-full border border-(--border) px-4 py-2 text-sm font-semibold text-(--foreground) transition hover:bg-(--accent) sm:inline-flex"
             href={loginUrl}
           >
-            Giriş yap
+            Login
           </a>
           <a
             className="inline-flex items-center justify-center rounded-full bg-(--primary) px-5 py-2 text-sm font-semibold text-(--primary-foreground) shadow-md transition hover:opacity-90"
             href={registerUrl}
           >
-            Ücretsiz dene
+            Try for free
           </a>
         </div>
       </header>
@@ -56,17 +58,17 @@ export default function Home() {
         <section className="space-y-8">
           <div className="inline-flex items-center gap-2 rounded-full border border-(--border) bg-(--card) px-4 py-2 text-sm text-(--muted-foreground) shadow-sm">
             <span className="inline-flex h-2 w-2 rounded-full bg-(--primary)" />
-            Salonlar ve randevu ile çalışan işletmeler için tek panel
+            Single panel for salons and appointment-based businesses
           </div>
 
           <div className="space-y-5">
             <h1 className="text-4xl font-semibold tracking-tight text-(--foreground) sm:text-5xl lg:text-6xl">
-              Randevular, ekip ve müşteri yönetimi tek platformda.
+              Appointments, team, and customer management on one platform.
             </h1>
             <p className="text-lg leading-8 text-(--muted-foreground) sm:text-xl">
-              SalonTakvim; randevu planlama, personel uygunluğu, müşteri
-              bildirimleri ve gelir takibini tek bir akıcı panelde birleştirir.
-              İşinizi büyütürken operasyonu sadeleştirin.
+              SalonTakvim combines appointment scheduling, staff availability,
+              customer notifications, and revenue tracking in one fluid panel.
+              Simplify operations while growing your business.
             </p>
           </div>
 
@@ -75,32 +77,32 @@ export default function Home() {
               className="inline-flex items-center justify-center rounded-full bg-(--primary) px-6 py-3 text-sm font-semibold text-(--primary-foreground) shadow-md transition hover:opacity-90"
               href={registerUrl}
             >
-              Ücretsiz demoya başla
+              Start free demo
             </a>
             <a
               className="inline-flex items-center justify-center rounded-full border border-(--border) bg-(--card) px-6 py-3 text-sm font-semibold text-(--foreground) shadow-sm transition hover:bg-(--accent)"
               href={loginUrl}
             >
-              Canlı örnekleri gör
+              See live examples
             </a>
           </div>
 
           <div className="grid gap-4 sm:grid-cols-3">
             <div className="rounded-2xl border border-(--border) bg-(--card)/70 p-4 shadow-sm">
               <p className="text-sm text-(--muted-foreground)">
-                Randevu Doluluk
+                Appointment Occupancy
               </p>
-              <p className="text-2xl font-semibold">%92</p>
+              <p className="text-2xl font-semibold">92%</p>
             </div>
             <div className="rounded-2xl border border-(--border) bg-(--card)/70 p-4 shadow-sm">
               <p className="text-sm text-(--muted-foreground)">
-                Otomatik Hatırlatma
+                Auto Reminders
               </p>
-              <p className="text-2xl font-semibold">24s & 1s</p>
+              <p className="text-2xl font-semibold">24h & 1h</p>
             </div>
             <div className="rounded-2xl border border-(--border) bg-(--card)/70 p-4 shadow-sm">
               <p className="text-sm text-(--muted-foreground)">
-                İptal Azalması
+                Cancellation Drop
               </p>
               <p className="text-2xl font-semibold">-38%</p>
             </div>
@@ -116,12 +118,12 @@ export default function Home() {
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-sm text-(--muted-foreground)">
-                  Bugünün Randevuları
+                  Today&apos;s Appointments
                 </p>
-                <p className="text-2xl font-semibold">12 randevu</p>
+                <p className="text-2xl font-semibold">12 appointments</p>
               </div>
               <div className="rounded-full bg-(--primary)/15 px-3 py-1 text-xs font-semibold text-(--primary)">
-                Canlı
+                Live
               </div>
             </div>
 
@@ -129,21 +131,21 @@ export default function Home() {
               {[
                 {
                   name: "Selin A.",
-                  service: "Saç Kesimi + Fön",
+                  service: "Haircut + Blow Dry",
                   time: "10:30",
-                  status: "Onaylandı",
+                  status: "Confirmed",
                 },
                 {
                   name: "Mehmet K.",
-                  service: "Sakal Bakımı",
+                  service: "Beard Care",
                   time: "11:15",
-                  status: "Hatırlatma gönderildi",
+                  status: "Reminder sent",
                 },
                 {
                   name: "Derya T.",
-                  service: "Cilt Bakımı",
+                  service: "Skin Care",
                   time: "12:00",
-                  status: "Ödeme alındı",
+                  status: "Paid",
                 },
               ].map((item) => (
                 <div
@@ -173,26 +175,26 @@ export default function Home() {
 
           <div className="absolute -left-10 top-10 w-48 rounded-2xl border border-(--border) bg-(--background)/80 p-4 shadow-lg backdrop-blur animate-[float_6s_ease-in-out_infinite]">
             <p className="text-xs uppercase text-(--muted-foreground)">
-              Hatırlatma
+              Reminder
             </p>
             <p className="mt-1 text-sm font-semibold text-(--foreground)">
-              24 saat önce SMS gönderildi
+              SMS sent 24 hours ago
             </p>
           </div>
 
           <div className="absolute -right-8 top-24 w-52 rounded-2xl border border-(--border) bg-(--background)/80 p-4 shadow-lg backdrop-blur animate-[float_7s_ease-in-out_infinite]">
-            <p className="text-xs uppercase text-(--muted-foreground)">Gelir</p>
+            <p className="text-xs uppercase text-(--muted-foreground)">
+              Revenue
+            </p>
             <p className="mt-1 text-sm font-semibold text-(--foreground)">
-              Bugün ₺14.200
+              Today ₺14,200
             </p>
           </div>
 
           <div className="absolute right-4 -bottom-10 w-56 rounded-2xl border border-(--border) bg-(--background)/80 p-4 shadow-lg backdrop-blur animate-[float_8s_ease-in-out_infinite]">
-            <p className="text-xs uppercase text-(--muted-foreground)">
-              Personel
-            </p>
+            <p className="text-xs uppercase text-(--muted-foreground)">Staff</p>
             <p className="mt-1 text-sm font-semibold text-(--foreground)">
-              5 aktif uzman, %96 doluluk
+              5 active experts, 96% occupancy
             </p>
           </div>
         </section>
@@ -201,43 +203,48 @@ export default function Home() {
       <section id="features" className="mx-auto w-full max-w-6xl px-6 pb-12">
         <div className="space-y-4">
           <p className="text-sm uppercase tracking-widest text-(--muted-foreground)">
-            Özellikler
+            Features
           </p>
           <h2 className="text-3xl font-semibold">
-            Randevu ve operasyon yönetimini tek akışta birleştirin
+            Unify appointment and operation management in one flow
           </h2>
           <p className="max-w-2xl text-sm text-(--muted-foreground)">
-            Müşteri bildirimlerinden personel planlamasına kadar tüm süreçleri
-            veriye dayalı yönetin. İşletme operasyonu zahmetsiz hale gelsin.
+            Manage all processes from customer notifications to staff planning
+            with data-driven insights. Make business operations effortless.
           </p>
         </div>
       </section>
+
+      <InteractiveAdminTour />
 
       <StackingFeatures
         features={[
           {
             key: "planning",
-            title: "Akıllı randevu planlama",
+            title: "Smart appointment scheduling",
             description:
-              "Uygunluk takvimi, otomatik çakışma kontrolü ve hızlı onay akışıyla randevu yoğunluğunu sorunsuz yönetin.",
-            highlight: "Zaman kazandırır",
+              "Manage appointment density seamlessly with fully customizable widget, automatic conflict check, and fast approval flow.",
+            highlight: "Saves time",
             accent: "primary",
+            images: ["/a1.png", "/a2.png", "/a3.png"],
           },
           {
             key: "team",
-            title: "Personel ve hizmet yönetimi",
+            title: "Staff and service management",
             description:
-              "Ekip yetkinlikleri, hizmet paketleri ve çalışma saatlerini tek panelden düzenleyin, kapasiteyi optimize edin.",
-            highlight: "Ekip performansı",
+              "Organize team, service packages, and working hours from a single panel, optimize capacity.",
+            highlight: "Team performance",
             accent: "indigo",
+            images: ["/b1.png", "/b2.png", "/b3.png"],
           },
           {
             key: "communication",
-            title: "Müşteri iletişimi",
+            title: "Customer communication",
             description:
-              "SMS/E-posta hatırlatmaları, iptalleri azaltır ve müşteri bağlılığını güçlendirir.",
-            highlight: "Memnuniyet artışı",
+              "SMS/Email reminders reduce cancellations and strengthen customer loyalty.",
+            highlight: "Satisfaction increase",
             accent: "amber",
+            images: ["/c1.png", "/c2.png"],
           },
         ]}
       />
@@ -247,30 +254,29 @@ export default function Home() {
           <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
             <div className="max-w-xl space-y-3">
               <p className="text-sm uppercase tracking-widest text-(--muted-foreground)">
-                Nasıl çalışır
+                How it works
               </p>
               <h2 className="text-3xl font-semibold">
-                3 adımda randevu yönetimini dijitalleştirin
+                Digitalize appointment management in 3 steps
               </h2>
               <p className="text-sm text-(--muted-foreground)">
-                Kurulumdan sonra ekiplerinizi, hizmetlerinizi ve
-                lokasyonlarınızı ekleyin. Online randevuları otomatik alın,
-                hatırlatmaları yönetin ve günlük operasyonu tek panelden
-                yönetin.
+                After setup, add your teams, services, and locations. Receive
+                online appointments automatically, manage reminders, and handle
+                daily operations from a single panel.
               </p>
             </div>
             <div className="grid gap-4 sm:grid-cols-3">
               {[
-                "Hizmet & ekip tanımı",
-                "Online randevu akışı",
-                "Hatırlatma ve raporlama",
+                "Service & team definition",
+                "Online appointment flow",
+                "Reminders and reporting",
               ].map((step, idx) => (
                 <div
                   key={step}
                   className="rounded-2xl border border-(--border) bg-(--background) p-4 text-sm"
                 >
                   <p className="text-xs text-(--muted-foreground)">
-                    Adım {idx + 1}
+                    Step {idx + 1}
                   </p>
                   <p className="mt-2 font-semibold text-(--foreground)">
                     {step}
@@ -282,116 +288,39 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="pricing" className="mx-auto w-full max-w-6xl px-6 pb-20">
-        <div className="grid gap-6 lg:grid-cols-3">
-          {[
-            {
-              name: "Başlangıç",
-              price: "₺0",
-              desc: "Yeni büyüyen küçük işletmeler için",
-              features: [
-                "Haftada 50 randevu",
-                "Online takvim",
-                "Online rezervasyon",
-                "Müşteri yönetimi",
-                "2 personel",
-                "Temel raporlar",
-              ],
-            },
-            {
-              name: "Pro",
-              price: "₺990",
-              desc: "Ek özellikler ile büyüyen işletmeler için",
-              features: [
-                "Sınırsız randevu",
-                "2 lokasyon",
-                "Özelleştirilebilir widget",
-                "Müşteri geri bildirimi",
-                "E-posta & SMS hatırlatma",
-                "Mini web sitesi",
-                "Detaylı raporlama",
-              ],
-              highlight: true,
-            },
-            {
-              name: "Kurumsal",
-              price: "Özel",
-              desc: "Çoklu lokasyonlu ve kurumsal ihtiyaçlar için",
-              features: [
-                "Çoklu şube yönetimi",
-                "Öncelikli destek",
-                "Widget üzerinden ödeme alma",
-                "Özel entegrasyonlar",
-                "Kurumsal raporlama",
-              ],
-            },
-          ].map((plan) => (
-            <div
-              key={plan.name}
-              className={`flex flex-col h-full rounded-3xl border border-(--border) p-6 shadow-sm ${
-                plan.highlight
-                  ? "bg-(--primary) text-(--primary-foreground)"
-                  : "bg-(--card)"
-              }`}
-            >
-              <div className="space-y-2">
-                <p className="text-sm uppercase tracking-widest opacity-80">
-                  {plan.name}
-                </p>
-                <p className="text-3xl font-semibold">{plan.price}</p>
-                <p className="text-sm opacity-80">{plan.desc}</p>
-              </div>
-              <ul className="my-6 space-y-3 text-sm">
-                {plan.features.map((feature) => (
-                  <li key={feature} className="flex items-center gap-2">
-                    <span className="inline-flex h-2 w-2 rounded-full bg-(--accent)" />
-                    {feature}
-                  </li>
-                ))}
-              </ul>
-              <button
-                className={`mt-auto w-full rounded-full px-4 py-2 text-sm font-semibold shadow-sm transition ${
-                  plan.highlight
-                    ? "bg-(--background) text-(--foreground)"
-                    : "bg-(--primary) text-(--primary-foreground)"
-                }`}
-              >
-                Paketi seç
-              </button>
-            </div>
-          ))}
-        </div>
-      </section>
+      <PricingSection registerUrl={registerUrl} />
 
       <section id="faq" className="mx-auto w-full max-w-6xl px-6 pb-20">
         <div className="rounded-3xl border border-(--border) bg-(--card) p-8 shadow-sm">
           <div className="space-y-3">
             <p className="text-sm uppercase tracking-widest text-(--muted-foreground)">
-              SSS
+              FAQ
             </p>
-            <h2 className="text-3xl font-semibold">Sık sorulan sorular</h2>
+            <h2 className="text-3xl font-semibold">
+              Frequently asked questions
+            </h2>
             <p className="text-sm text-(--muted-foreground)">
-              SalonTakvim ile ilgili merak edilen konuların kısa cevapları.
+              Quick answers to common questions about SalonTakvim.
             </p>
           </div>
 
           <div className="mt-8 grid gap-4 lg:grid-cols-2">
             {[
               {
-                q: "Kurulum ne kadar sürer?",
-                a: "İşletme bilgilerinizi ve hizmetlerinizi ekledikten sonra 10 dakika içinde randevu almaya başlayabilirsiniz.",
+                q: "How long does setup take?",
+                a: "After adding your business info and services, you can start taking appointments within 10 minutes.",
               },
               {
-                q: "SMS ve e-posta hatırlatmalarını özelleştirebilir miyim?",
-                a: "Evet. Şablonlar ve gönderim zamanları yönetim panelinden düzenlenebilir.",
+                q: "Can I customize SMS and email reminders?",
+                a: "Yes. Templates and sending times can be edited from the management panel.",
               },
               {
-                q: "Çoklu şube yönetimi var mı?",
-                a: "Kurumsal pakette çoklu lokasyon, rol bazlı yetkilendirme ve raporlama sunulur.",
+                q: "Is there multi-branch management?",
+                a: "The Enterprise plan offers multi-location support, role-based permissions, and reporting.",
               },
               {
-                q: "Mevcut müşteri verilerimi taşıyabilir miyim?",
-                a: "CSV ile içe aktarma ve ekip desteği ile hızlı veri taşıma sağlayabiliriz.",
+                q: "Can I migrate my existing customer data?",
+                a: "We provide fast data migration with CSV import and team support.",
               },
             ].map((item) => (
               <div
@@ -413,17 +342,18 @@ export default function Home() {
       <section id="cta" className="mx-auto w-full max-w-6xl px-6 pb-24">
         <div className="rounded-3xl border border-(--border) bg-(--card) p-8 text-center shadow-sm">
           <h2 className="text-3xl font-semibold">
-            İşletmenizi bugünden büyütmeye başlayın
+            Start growing your business today
           </h2>
           <p className="mt-3 text-sm text-(--muted-foreground)">
-            Ücretsiz demo ile randevu akışınızı 10 dakikada dijitale taşıyın.
+            Move your appointment flow to digital in 10 minutes with a free
+            demo.
           </p>
           <div className="mt-6 flex flex-wrap justify-center gap-4">
             <button className="rounded-full bg-(--primary) px-6 py-3 text-sm font-semibold text-(--primary-foreground) shadow-md transition hover:opacity-90">
-              Demo planla
+              Schedule a demo
             </button>
             <button className="rounded-full border border-(--border) px-6 py-3 text-sm font-semibold text-(--foreground) transition hover:bg-(--accent)">
-              Satış ekibiyle görüş
+              Contact sales
             </button>
           </div>
         </div>
@@ -439,45 +369,45 @@ export default function Home() {
               <div>
                 <p className="text-lg font-semibold">SalonTakvim</p>
                 <p className="text-xs text-(--muted-foreground)">
-                  Randevu ve işletme yönetimi
+                  Appointment and business management
                 </p>
               </div>
             </div>
             <p className="max-w-sm text-sm text-(--muted-foreground)">
-              İşletmenizi randevu, ekip ve müşteri yönetiminde hızlandıran
-              modern çözüm.
+              Modern solution to accelerate your business in appointment, team,
+              and customer management.
             </p>
           </div>
 
           <div className="grid gap-6 sm:grid-cols-3">
             <div className="space-y-2 text-sm">
-              <p className="font-semibold text-(--foreground)">Ürün</p>
+              <p className="font-semibold text-(--foreground)">Product</p>
               <a
                 className="block text-(--muted-foreground) hover:text-(--foreground)"
                 href="#features"
               >
-                Özellikler
+                Features
               </a>
               <a
                 className="block text-(--muted-foreground) hover:text-(--foreground)"
                 href="#workflow"
               >
-                Nasıl çalışır
+                How it works
               </a>
               <a
                 className="block text-(--muted-foreground) hover:text-(--foreground)"
                 href="#pricing"
               >
-                Paketler
+                Pricing
               </a>
             </div>
             <div className="space-y-2 text-sm">
-              <p className="font-semibold text-(--foreground)">Destek</p>
+              <p className="font-semibold text-(--foreground)">Support</p>
               <a
                 className="block text-(--muted-foreground) hover:text-(--foreground)"
                 href="#faq"
               >
-                SSS
+                FAQ
               </a>
               <a
                 className="block text-(--muted-foreground) hover:text-(--foreground)"
@@ -489,16 +419,16 @@ export default function Home() {
                 className="block text-(--muted-foreground) hover:text-(--foreground)"
                 href="mailto:destek@salontakvim.com"
               >
-                destek@salontakvim.com
+                help@salontakvim.com
               </a>
             </div>
             <div className="space-y-2 text-sm">
-              <p className="font-semibold text-(--foreground)">Yasal</p>
+              <p className="font-semibold text-(--foreground)">Legal</p>
               <span className="block text-(--muted-foreground)">
-                KVKK & Gizlilik
+                Privacy Policy
               </span>
               <span className="block text-(--muted-foreground)">
-                Kullanım Koşulları
+                Terms of Use
               </span>
             </div>
           </div>
@@ -506,8 +436,8 @@ export default function Home() {
 
         <div className="border-t border-(--border)">
           <div className="mx-auto flex w-full max-w-6xl flex-col gap-3 px-6 py-6 text-xs text-(--muted-foreground) md:flex-row md:items-center md:justify-between">
-            <span>© 2026 SalonTakvim. Tüm hakları saklıdır.</span>
-            <span>İstanbul, Türkiye</span>
+            <span>© 2026 SalonTakvim. All rights reserved.</span>
+            <span>Istanbul, Turkey</span>
           </div>
         </div>
       </footer>
