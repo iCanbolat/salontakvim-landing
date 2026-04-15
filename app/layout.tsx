@@ -9,7 +9,7 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "SalonTakvim",
+  title: "Careify",
   description:
     "Randevu sistemiyle çalışan işletmeler için modern iş yeri yönetimi ve planlama platformu.",
 };

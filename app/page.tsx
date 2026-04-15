@@ -13,10 +13,10 @@ export default function Home() {
       <header className="mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-6">
         <div className="flex items-center gap-3">
           <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-(--primary) text-(--primary-foreground) font-semibold">
-            ST
+            C
           </div>
           <div>
-            <p className="text-lg font-semibold">SalonTakvim</p>
+            <p className="text-lg font-semibold">Careify</p>
             <p className="text-xs text-(--muted-foreground)">
               Appointment and business management
             </p>
@@ -66,7 +66,7 @@ export default function Home() {
               Appointments, team, and customer management on one platform.
             </h1>
             <p className="text-lg leading-8 text-(--muted-foreground) sm:text-xl">
-              SalonTakvim combines appointment scheduling, staff availability,
+              Careify combines appointment scheduling, staff availability,
               customer notifications, and revenue tracking in one fluid panel.
               Simplify operations while growing your business.
             </p>
@@ -300,7 +300,7 @@ export default function Home() {
               Frequently asked questions
             </h2>
             <p className="text-sm text-(--muted-foreground)">
-              Quick answers to common questions about SalonTakvim.
+              Quick answers to common questions about Careify.
             </p>
           </div>
 
@@ -364,10 +364,10 @@ export default function Home() {
           <div className="space-y-3">
             <div className="flex items-center gap-3">
               <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-(--primary) text-(--primary-foreground) font-semibold">
-                ST
+                C
               </div>
               <div>
-                <p className="text-lg font-semibold">SalonTakvim</p>
+                <p className="text-lg font-semibold">Careify</p>
                 <p className="text-xs text-(--muted-foreground)">
                   Appointment and business management
                 </p>
@@ -417,9 +417,9 @@ export default function Home() {
               </a>
               <a
                 className="block text-(--muted-foreground) hover:text-(--foreground)"
-                href="mailto:destek@salontakvim.com"
+                href="mailto:hello@careify.com"
               >
-                help@salontakvim.com
+                hello@careify.com
               </a>
             </div>
             <div className="space-y-2 text-sm">
@@ -436,7 +436,7 @@ export default function Home() {
 
         <div className="border-t border-(--border)">
           <div className="mx-auto flex w-full max-w-6xl flex-col gap-3 px-6 py-6 text-xs text-(--muted-foreground) md:flex-row md:items-center md:justify-between">
-            <span>© 2026 SalonTakvim. All rights reserved.</span>
+            <span>© 2026 Careify. All rights reserved.</span>
             <span>Istanbul, Turkey</span>
           </div>
         </div>
