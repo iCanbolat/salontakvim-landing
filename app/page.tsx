@@ -424,12 +424,24 @@ export default function Home() {
             </div>
             <div className="space-y-2 text-sm">
               <p className="font-semibold text-(--foreground)">Legal</p>
-              <span className="block text-(--muted-foreground)">
+              <a
+                className="block text-(--muted-foreground) hover:text-(--foreground)"
+                href="/terms-of-service"
+              >
+                Terms of Service
+              </a>
+              <a
+                className="block text-(--muted-foreground) hover:text-(--foreground)"
+                href="/privacy-policy"
+              >
                 Privacy Policy
-              </span>
-              <span className="block text-(--muted-foreground)">
-                Terms of Use
-              </span>
+              </a>
+              <a
+                className="block text-(--muted-foreground) hover:text-(--foreground)"
+                href="/refund-policy"
+              >
+                Refund Policy
+              </a>
             </div>
           </div>
         </div>
